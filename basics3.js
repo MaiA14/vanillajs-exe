@@ -31,3 +31,39 @@ function swapFirstAndLastDigits(num) {
   let newStr = lastDigit + sliceMiddleDigits + firstDigit;
   console.log(newStr);
 }
+
+/* Q4 */
+// Read a number and check if its symmetric (such as: 95459)
+function isNumberPalindrome(num) {
+  let numStr = num.toString();
+  let start = 0;
+  let end = numStr.length - 1;
+  while (start < end) {
+    if (numStr[start] !== numStr[end]) return false;
+    start++;
+    end--;
+  }
+  return true;
+}
+
+console.log(isNumberPalindrome(1234));
+console.log(isNumberPalindrome(1221));
+console.log(isNumberPalindrome(1));
+
+/* Q5 */
+// Read a number and print its reverse (BONUS: as number not as string). 
+function reverseNum(num) {
+  let numToBeReveresed = 0;
+  while (num > 0) {
+    let digit = num % 10;
+    numToBeReveresed = numToBeReveresed * 10 + digit;
+    num = parseInt(num / 10);
+  }
+
+  return numToBeReveresed;
+}
+
+console.log("\nCheck reverseNum function:");
+var num2 = 12345;
+console.log("The num to be reversed is:", num2);
+console.log(reverseNum(num2));
