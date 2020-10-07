@@ -138,17 +138,26 @@ console.log(getAsterisks(4));
 (the requested height here is 4)
 Hint: use the function getAsterisks in a loop. */
 function drawTriangle(height) {
-    let str = "";
-    for (var i = 1; i <= height; i++)
-    {
-      str += getAsterisks(i) + '\n';
-    }
-    
-    for (var i = height - 1; i > 0; i--)
-    {
-      str += getAsterisks(i) + '\n';
-    }
-    console.log(str);
+  let str = "";
+  for (var i = 1; i <= height; i++) {
+    str += getAsterisks(i) + "\n";
+  }
+
+  for (var i = height - 1; i > 0; i--) {
+    str += getAsterisks(i) + "\n";
+  }
+  console.log(str);
 }
 
 drawTriangle(4);
+
+/* Q10 */
+// Write a program to compute the greatest common divisor (GCD) of two positive integers. Example: 6, 15  => gcd: 3
+function greatestCommonDivisor(num1, num2){
+ if (num2 == 0) {
+    return num1;
+  }
+  return greatestCommonDivisor(num2, num1 % num2);
+}
+
+console.log(greatestCommonDivisor(12,8));
